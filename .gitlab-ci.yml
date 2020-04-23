@@ -14,7 +14,7 @@ build_production:
     - npm run build
 
 test_production:
-  stage: build
+  stage: test
   environment: Production  
   only:
     - master
@@ -22,7 +22,7 @@ test_production:
     - npm run test:unit
 
 deploy_production:
-  stage: build
+  stage: deploy
   environment: Production  
   only:
     - master
