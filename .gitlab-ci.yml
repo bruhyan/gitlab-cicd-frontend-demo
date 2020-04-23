@@ -10,7 +10,7 @@ build_production:
     - master
   script:
     - npm install
-    - npm i -g firebase-tools
+    # - npm i -g firebase-tools
     - npm run build
 
 test_production:
@@ -27,4 +27,5 @@ deploy_production:
   only:
     - master
   script:
+    - npm i -g firebase-tools
     - firebase deploy --non-interactive --token ${FIREBASE_TOKEN}
