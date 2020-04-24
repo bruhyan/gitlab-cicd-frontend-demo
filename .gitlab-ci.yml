@@ -28,3 +28,11 @@ deploy_production:
     - master
   script:
     - firebase deploy --non-interactive --token ${FIREBASE_TOKEN}
+
+development_test:
+  stage: test
+  environment: Development  
+  only:
+    - development 
+  script:
+    - npm run test:unit
