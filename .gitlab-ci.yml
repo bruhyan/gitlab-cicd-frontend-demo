@@ -12,6 +12,12 @@ build_production:
     - npm install
     # - npm i -g firebase-tools
     - npm run build
+  artifacts:
+    name: "artifacts"
+    untracked: true
+    expire_in: 30 mins
+    paths:
+      - build
 
 test_production:
   stage: test
@@ -26,8 +32,11 @@ deploy_production:
   environment: Production  
   only:
     - master
-  script:
-    - npm install
+  before_script:
     - npm i -g firebase-tools
-    - npm run build
+    - (if [ -d "build" ]; then echo ok; else exit "no build folder, try to run pipeline again"; fi)
+  script:
+    # - npm install
+    # - npm i -g firebase-tools
+    # - npm run build
     - firebase deploy --non-interactive --token ${FIREBASE_TOKEN}
