@@ -10,7 +10,6 @@ build_production:
     - master
   script:
     - npm install
-    # - npm i -g firebase-tools
     - npm run build
   artifacts:
     name: "artifacts"
@@ -34,9 +33,5 @@ deploy_production:
     - master
   before_script:
     - npm i -g firebase-tools
-    # - (if [ -d "build" ]; then echo ok; else exit "no build folder, try to run pipeline again"; fi)
   script:
-    # - npm install
-    # - npm i -g firebase-tools
-    # - npm run build
     - firebase deploy --non-interactive --token ${FIREBASE_TOKEN}
