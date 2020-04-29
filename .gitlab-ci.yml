@@ -18,8 +18,12 @@ build_production:
     paths:
       - build
 
+stages:
+  - test:unit
+  - test:e2e
+      
 unit_test_production:
-  stage: test
+  stage: test:unit
   environment: Production  
   only:
     - master
@@ -27,7 +31,7 @@ unit_test_production:
     - npm run test:unit
 
 e2e_test_production:
-  stage: test
+  stage: test:e2e
   environment: Production
   only:
     - master
