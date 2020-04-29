@@ -17,13 +17,9 @@ build_production:
     expire_in: 30 mins
     paths:
       - build
-
-stages:
-  - test:unit
-  - test:e2e
       
 unit_test_production:
-  stage: test:unit
+  stage: test
   environment: Production  
   only:
     - master
@@ -31,7 +27,7 @@ unit_test_production:
     - npm run test:unit
 
 e2e_test_production:
-  stage: test:e2e
+  stage: test
   environment: Production
   only:
     - master
