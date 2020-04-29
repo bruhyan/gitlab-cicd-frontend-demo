@@ -49,3 +49,4 @@ deploy_production:
     - npm i -g firebase-tools
   script:
     - firebase deploy --non-interactive --token ${FIREBASE_TOKEN}
+  when: manual
