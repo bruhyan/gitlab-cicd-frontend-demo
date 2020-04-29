@@ -18,13 +18,27 @@ build_production:
     paths:
       - build
 
-test_production:
+unit_test_production:
   stage: test
   environment: Production  
   only:
     - master
   script:
     - npm run test:unit
+
+e2e_test_production:
+  stage: test
+  environment: Production
+  only:
+    - master
+  script:
+    - npm run test:e2e
+  artifacts:
+    name: "e2e_artifacts"
+    untracked: true
+    expire_in: 30 mins
+    paths:
+      - e2e_artifacts
 
 deploy_production:
   stage: deploy
