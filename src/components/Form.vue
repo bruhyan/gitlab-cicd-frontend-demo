@@ -14,6 +14,7 @@
           required
           placeholder="Enter email"
           name="input-one"
+          data-cy="cy-email-input"
         ></b-form-input>
       </b-form-group>
 
@@ -23,10 +24,11 @@
           v-model="form.name"
           required
           placeholder="Enter name"
+          data-cy="cy-name-input"
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary" data-cy="cy-form-submit">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
     <b-card class="mt-3" header="Form Data Result">
