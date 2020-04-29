@@ -32,7 +32,8 @@ e2e_test_production:
   only:
     - master
   before_script:
-    - cypress install
+    # - cypress install
+    - node_modules/.bin/cypress install
   script:
     - npm run test:e2e
   artifacts:
