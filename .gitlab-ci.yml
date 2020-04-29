@@ -35,7 +35,8 @@ e2e_test_production:
     # - cypress install
     - node_modules/.bin/cypress install
   script:
-    - npm run test:e2e
+    # - npm run test:e2e
+    - npm run ci
   artifacts:
     name: "e2e_artifacts"
     untracked: true

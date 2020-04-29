@@ -1,6 +1,6 @@
 describe('Actions', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('http://localhost:8080')
   })
 
   it('fill up form', () => {
