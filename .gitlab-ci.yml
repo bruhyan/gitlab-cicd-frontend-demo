@@ -31,6 +31,8 @@ e2e_test_production:
   environment: Production
   only:
     - master
+  before_script:
+    - cypress install
   script:
     - npm run test:e2e
   artifacts:
