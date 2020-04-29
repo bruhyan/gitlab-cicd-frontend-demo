@@ -27,6 +27,7 @@ unit_test_production:
     - npm run test:unit
 
 e2e_test_production:
+  image: cypress/base:10
   stage: test
   environment: Production
   only:
